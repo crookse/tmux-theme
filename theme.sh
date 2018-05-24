@@ -55,11 +55,9 @@ set-window-option -g clock-mode-colour colour160
 #
 # Title String Settings
 #
-# If you're using iTerm2, then these will be used in place of the tabs you have set for iTerm2. It
-# is recommended that you uncheck the following in Appearance > Window & Tab Titles:
-#
-# Show current job name
-# Show profile name
+# If you're using iTerm2, then this title string will be used in place of the tab names you may have
+# set for iTerm2. This will also replace any "Thank you for flying Vim" tab titles. It is
+# recommended that you UNCHECK the "Show profile name" setting in Appearance > Window & Tab Titles.
 #
 set -g set-titles-string "#S -- #W"
 
