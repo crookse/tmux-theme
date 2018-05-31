@@ -74,9 +74,10 @@ set -g status-left "#[fg=$COLOR_BLUE]tmux Session: \"#S\" #[fg=$COLOR_STATUS_FOR
 # Set the bottom-right text for the status bar.
 #
 separator_forward="#[fg=$COLOR_STATUS_FOREGROUND]///"
-php_version="#[fg=$COLOR_ACTIVE]#(/usr/bin/php --version | grep -m1 PHP | sed -e 's/ (cli).*//g') $separator_forward"
-java_version="#[fg=$COLOR_ACTIVE]#(/usr/bin/java --version | grep -m1 'Runtime') $separator_forward"
-node_version="#[fg=$COLOR_ACTIVE]Node #(node --version) (#[fg=$COLOR_ACTIVE]npm #(npm --version)) $separator_forward"
+php_version="#[fg=$COLOR_ACTIVE]PHP v#(/usr/bin/php --version | grep -m1 PHP | sed -e 's/ (cli).*//g' | sed 's/PHP //') $separator_forward"
+# java_version="#[fg=$COLOR_ACTIVE]#(/usr/bin/java --version | grep -m1 'Runtime') $separator_forward"
+node_version="#[fg=$COLOR_ACTIVE]Node #(node --version) (#[fg=$COLOR_ACTIVE]npm v#(npm --version)) $separator_forward"
+xcode_select_version="#[fg=$COLOR_ACTIVE]#(/usr/bin/xcode-select --version | sed -e 's/version /v/g' | sed s'/.$//') $separator_forward"
 
-set -g status-right "$java_version $php_version $node_version #[fg=$COLOR_BLUE]%A | %d %H%M R %m %Y"
+set -g status-right "$xcode_select_version $php_version $node_version #[fg=$COLOR_BLUE]%A | %d %H%M R %m %Y"
 
